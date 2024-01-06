@@ -17,10 +17,6 @@
 # --------------------------------------------------
 version: '3.8'
 
-volumes:
-  homeseer-data:
-    name: homeseer-data
-
 services:
   homeseer:
     container_name: homeseer
@@ -39,3 +35,7 @@ services:
       LANG: en_US.UTF-8
     volumes:
       - homeseer-data:/homeseer
+### in latest docker version parsing error on volumes is given, placing it at the bottom = no errors
+volumes:
+  homeseer-data:
+    name: homeseer-data
